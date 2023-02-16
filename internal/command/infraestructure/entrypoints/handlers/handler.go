@@ -1,8 +1,10 @@
 package handlers
 
 import (
-	"github.com/gin-gonic/gin"
 	"net/http"
+
+	"github.com/gin-gonic/gin"
+
 	"reservation-api/internal/command/core/domain"
 	"reservation-api/internal/command/infraestructure/entrypoints/handlers/contracts"
 )
@@ -17,14 +19,13 @@ type RequestMapper interface {
 
 type ReservationHandler struct {
 	useCase             UseCase
-	requestMapper RequestMapper
+	requestMapper       RequestMapper
 	apiResponseProvider ApiResponseProvider
 }
 
 func NewReservationHandler(useCase UseCase, requestMapper RequestMapper, apiResponseProvider ApiResponseProvider) *ReservationHandler {
 	return &ReservationHandler{useCase: useCase, requestMapper: requestMapper, apiResponseProvider: apiResponseProvider}
 }
-
 
 func (r ReservationHandler) HandleReservation(c *gin.Context) {
 
@@ -44,7 +45,7 @@ func (r ReservationHandler) HandleReservation(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusCreated, gin.H{
-		"message": "The reservation was successfully completed.",
+		"message": "The reservation has been successfully created.",
 	})
 
 	return

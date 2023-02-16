@@ -2,6 +2,7 @@ package dao
 
 import (
 	"gorm.io/gorm"
+
 	businessError "reservation-api/internal/query/core/error"
 	"reservation-api/internal/query/infraestructure/storage/dto"
 )
@@ -20,7 +21,7 @@ func (p PostgresReservationDAO) GetAllReservations() ([]dto.Reservation, error) 
 	result := p.gormDB.Find(&reservationsDTO)
 
 	if result.Error != nil {
-		return nil, businessError.NewReadError("Error consulting the reservation.")
+		return nil, businessError.NewReadError("Error consulting the reservations.")
 	}
 
 	return reservationsDTO, nil

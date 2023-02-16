@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+
 	businessError "reservation-api/internal/command/core/error"
 )
 
@@ -16,8 +17,6 @@ func (r *ApiResponseProvider) MapperAPIError(w http.ResponseWriter, err error) e
 	switch err.(type) {
 	case businessError.ClientAlreadyHasReservation, businessError.NumberAlreadyReserved:
 		r.apiError.setAPIError(err, http.StatusConflict)
-	case businessError.PersistenceError:
-		r.apiError.setAPIError(err, http.StatusInternalServerError)
 	default:
 		r.apiError.setAPIError(err, http.StatusInternalServerError)
 	}
@@ -63,5 +62,3 @@ func (r ApiResponseProvider) encodeJSON(w http.ResponseWriter, v interface{}, co
 
 	return nil
 }
-
-

@@ -1,8 +1,10 @@
 package handlers
 
 import (
-	"github.com/gin-gonic/gin"
 	"net/http"
+
+	"github.com/gin-gonic/gin"
+
 	"reservation-api/internal/query/infraestructure/storage/dto"
 )
 
@@ -12,7 +14,7 @@ type ReservationRepository interface {
 
 type ReservationHandler struct {
 	reservationRepository ReservationRepository
-	apiResponseProvider ApiResponseProvider
+	apiResponseProvider   ApiResponseProvider
 }
 
 func NewReservationHandler(reservationRepository ReservationRepository, apiResponseProvider ApiResponseProvider) *ReservationHandler {
