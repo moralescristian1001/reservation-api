@@ -4,18 +4,13 @@ import (
 	"fmt"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
-	"os"
 )
 
 func ConnectDatabase() *gorm.DB {
 
 	dsn := fmt.Sprintf(
-		"host=localhost user=%s password=%s dbname=%s port=5432 sslmode=disable TimeZone=Asia/Shanghai",
-		os.Getenv("DB_USER"),
-		os.Getenv("DB_PASSWORD"),
-		os.Getenv("DB_NAME"),
+		"host=wispy-flower-5019-db.internal user=postgres password=bCUUSR1CtixNmgB dbname=reservation port=5432 sslmode=disable",
 	)
-
 	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 
 	if err != nil {

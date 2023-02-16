@@ -3,8 +3,16 @@ module reservation-api
 go 1.19
 
 require (
+	github.com/DATA-DOG/go-sqlmock v1.5.0
+	github.com/gin-gonic/gin v1.8.2
+	github.com/go-playground/assert/v2 v2.2.0
+	github.com/golang/mock v1.6.0
+	gorm.io/driver/postgres v1.4.7
+	gorm.io/gorm v1.24.5
+)
+
+require (
 	github.com/gin-contrib/sse v0.1.0 // indirect
-	github.com/gin-gonic/gin v1.8.2 // indirect
 	github.com/go-playground/locales v0.14.1 // indirect
 	github.com/go-playground/universal-translator v0.18.1 // indirect
 	github.com/go-playground/validator/v10 v10.11.2 // indirect
@@ -27,6 +35,4 @@ require (
 	golang.org/x/text v0.7.0 // indirect
 	google.golang.org/protobuf v1.28.1 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
-	gorm.io/driver/postgres v1.4.7 // indirect
-	gorm.io/gorm v1.24.5 // indirect
 )
