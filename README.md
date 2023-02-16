@@ -52,5 +52,21 @@ Se implementaron la mayoria de principios SOLID en la aplicación, con el fin de
 
 ![alt text](./docs/img/solid.png)
 
+## Despliegue:
+
+Se realiza el despliegue del aplicativo sobre la herramienta Fly.io, una nueva nube pública, construida sobre servidores bare-metal que se gestionan en centros de datos de todo el mundo, diseñada para facilitar el despliegue de aplicaciones distribuidas y en tiempo real cerca de sus usuarios, estén donde estén.
+
+URL aplicación: https://wispy-flower-5019.fly.dev/v1/reservations
+
+## Ejemplo de como consumir los endpoints en la nube:
+
+Para el consumo de los servicios en nube, se debe abrir un cliente que permita consumir el API (Ej: postman, insomnia, etc).
+
+Ejemplo para el guardado de una nueva reserva
+
+        Método: POST
+        URL: https://wispy-flower-5019.fly.dev/v1/reservations
+        Body: {"client_id": "cliente2","reservation": 10}
+
 ### Nota:
-En la raíz del proyecto se encuentra una carpeta docs/postman_collections en la cual se podrá encontrar los diferentes consumos tanto para el ambiente local como para el de producción con los diferentes escenarios y de esta manera poder probar de una manera más eficiente los casos de prueba que se pueden presentar.
+En la raíz del proyecto se encuentra una carpeta docs/postman_collections en la cual se podrá encontrar los consumos con los diferentes escenarios de pruebas y de esta manera poder ejecutar de forma más eficiente los casos de prueba que se pueden presentar.

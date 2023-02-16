@@ -1,0 +1,211 @@
+{
+	"info": {
+		"_postman_id": "14e7c004-37d2-4f50-8de8-65c532144d69",
+		"name": "reservation-api-prod",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7884966"
+	},
+	"item": [
+		{
+			"name": "Guardar reserva",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"client_id\": \"cliente2\",\n    \"reservation\": 10\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://wispy-flower-5019.fly.dev/v1/reservations",
+					"protocol": "https",
+					"host": [
+						"wispy-flower-5019",
+						"fly",
+						"dev"
+					],
+					"path": [
+						"v1",
+						"reservations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Guardar reserva - numero ya reservado",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"client_id\": \"cliente\",\n    \"reservation\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://wispy-flower-5019.fly.dev/v1/reservations",
+					"protocol": "https",
+					"host": [
+						"wispy-flower-5019",
+						"fly",
+						"dev"
+					],
+					"path": [
+						"v1",
+						"reservations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Guardar reserva - cliente que ya habia reservado",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"client_id\": \"cliente4\",\n    \"reservation\": 4\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://wispy-flower-5019.fly.dev/v1/reservations",
+					"protocol": "https",
+					"host": [
+						"wispy-flower-5019",
+						"fly",
+						"dev"
+					],
+					"path": [
+						"v1",
+						"reservations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Guardar reserva -  nuevo cliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"client_id\": \"cliente\",\n    \"reservation\": 20\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://wispy-flower-5019.fly.dev/v1/reservations",
+					"protocol": "https",
+					"host": [
+						"wispy-flower-5019",
+						"fly",
+						"dev"
+					],
+					"path": [
+						"v1",
+						"reservations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Guardar reserva -  bad request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"client_id\": \"\",\n    \"reservation\": 5\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://wispy-flower-5019.fly.dev/v1/reservations",
+					"protocol": "https",
+					"host": [
+						"wispy-flower-5019",
+						"fly",
+						"dev"
+					],
+					"path": [
+						"v1",
+						"reservations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Guardar reserva -  bad request - numero de reserva menor a 1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"client_id\": \"cliente4\",\n    \"reservation\": -2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://wispy-flower-5019.fly.dev/v1/reservations",
+					"protocol": "https",
+					"host": [
+						"wispy-flower-5019",
+						"fly",
+						"dev"
+					],
+					"path": [
+						"v1",
+						"reservations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener todas las reservas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://wispy-flower-5019.fly.dev/v1/reservations",
+					"protocol": "https",
+					"host": [
+						"wispy-flower-5019",
+						"fly",
+						"dev"
+					],
+					"path": [
+						"v1",
+						"reservations"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
